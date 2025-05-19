@@ -122,6 +122,26 @@ function App() {
 
   return (
     <div className="App min-h-screen bg-gray-100">
+      {isLoading && (
+        <div className="loading-overlay">
+          <div className="w-full max-w-md px-4">
+            <div className="text-center mb-4">
+              <div className="w-12 h-12 mx-auto mb-3">
+                <div className="loading-spinner"></div>
+              </div>
+              <h3 className="text-lg font-medium text-gray-800">Capturing Screenshots</h3>
+              <p className="text-gray-600 mb-4">This may take a moment...</p>
+            </div>
+            <div className="bg-gray-200 rounded-full overflow-hidden">
+              <div className="progress-bar"></div>
+            </div>
+            <p className="text-sm text-center text-gray-500 mt-2">
+              Processing {url}
+            </p>
+          </div>
+        </div>
+      )}
+      
       <header className="bg-blue-600 text-white p-4 shadow-md">
         <div className="container mx-auto">
           <h1 className="text-3xl font-bold">Website Screenshot Generator</h1>
