@@ -9,6 +9,36 @@ main {
   flex: 1;
 }
 
+/* Progress bar animation */
+.progress-bar {
+  height: 4px;
+  background-color: #3b82f6;
+  width: 0;
+  border-radius: 4px;
+  animation: progress 30s ease-in-out;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 20%;
+  }
+  50% {
+    width: 50%;
+  }
+  70% {
+    width: 70%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
 /* Spinner for loading states */
 .loading-spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -33,4 +63,25 @@ main {
   .screenshot-gallery {
     grid-template-columns: 1fr;
   }
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-message {
+  margin-top: 20px;
+  color: #3b82f6;
+  font-weight: 500;
 }
